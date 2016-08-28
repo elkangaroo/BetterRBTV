@@ -1,50 +1,54 @@
 {
-  "manifest_version": 2,
-  "name": "BetterRBTV",
-  "description": "Komfortfunktionen für YouTube™ Live.",
-  "default_locale": "de",
-  "version": "0.2.1",
-  "icons": {
-    "128": "icon.png"
-  },
-  "content_scripts": [
-    {
-      "matches": [
-        "*://*.youtube.com/*"
-      ],
-      "js": [
-        "lib/jquery-3.1.0.slim.min.js",
-        "lib/dateformat.js",
-        "lib/trie.js",
-        "lib/push.min.js",
-        "emoji_to_keyword.js",
-        "keyword_to_emoji.js",
-        "util.js",
-        "YouTubeLive.js",
-        "default_settings.js",
-        "timestamp.js",
-		"colored_names.js",
-		"better_mention_highlight.js",
-		"push_notifications.js",
-        "chat_filter.js",
-        "user_filters.js",
-        "keyword_replacement.js",
-        "user_suggestions.js",
-        "keyword_suggestions.js",
-        "entry.js"
-      ],
-      "run_at": "document_idle",
-      "all_frames": true
+    "author": "BRBTV Contributors",
+    "browser_action": {
+        "default_icon": {
+            "32": "icon-32.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.youtube.com/*"
+            ],
+            "js": [
+                "lib/jquery-3.1.0.slim.min.js",
+                "lib/dateformat.js",
+                "lib/trie.js",
+                "lib/push.min.js",
+                "emoji_to_keyword.js",
+                "keyword_to_emoji.js",
+                "util.js",
+                "YouTubeLive.js",
+                "default_settings.js",
+                "timestamp.js",
+                "colored_names.js",
+                "better_mention_highlight.js",
+                "push_notifications.js",
+                "chat_filter.js",
+                "user_filters.js",
+                "keyword_replacement.js",
+                "user_suggestions.js",
+                "keyword_suggestions.js",
+                "entry.js"
+            ],
+            "run_at": "document_idle",
+            "all_frames": true
+        }
+    ],
+    "default_locale": "de",
+    "description": "Komfortfunktionen für YouTube™ Live.",
+    "icons": {
+        "128": "icon.png"
+    },
+    "manifest_version": 2,
+    "name": "BetterRBTV",
+    "options_page": "options.html",
+    "permissions": [
+        "storage"
+    ],
+    "version": "0.2.1",
+    "-ms-preload": {
+        "backgroundScript": "backgroundScriptsAPIBridge.js",
+        "contentScript": "contentScriptsAPIBridge.js"
     }
-  ],
-  "permissions": [
-    "storage"
-  ],
-  "options_ui": {
-    "page": "options.html",
-    "chrome_style": true
-  },
-  "browser_action": {
-    "default_icon": "icon-32.png"
-  }
 }
